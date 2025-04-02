@@ -1,4 +1,4 @@
-import { createClient, Entry, EntryCollection } from 'contentful';
+import { createClient, Entry} from 'contentful';
 import { Document } from '@contentful/rich-text-types';
 
 interface HomepageFields {
