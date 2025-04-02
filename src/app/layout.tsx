@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import './globals.scss';
 
 export const metadata = {
-  title: 'Next.js CMS Project',
+  title: 'frettasidan',
 };
 
 export default function RootLayout({
@@ -15,8 +16,8 @@ export default function RootLayout({
         <header>
           <h1>fréttasíðan</h1>
           <nav>
-            <a href="/">Heim</a>
-            <a href="/news">Fréttir</a>
+            <Link href="/">Heim</Link>
+            <Link href="/news">Fréttir</Link>
           </nav>
         </header>
         {children}
