@@ -1,6 +1,5 @@
 import { getNewsArticle } from '../contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Document } from '@contentful/rich-text-types';
 
 interface ArticleProps {
   searchParams: { slug?: string };
