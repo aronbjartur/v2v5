@@ -1,13 +1,13 @@
 import { getNewsArticle } from '../contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Document } from '@contentful/rich-text-types';
 
 interface ArticleProps {
-  searchParams: { slug?: string } | Promise<{ slug?: string }>;
+  searchParams: { slug?: string };
 }
 
 export default async function ArticlePage({ searchParams }: ArticleProps) {
-  const params = await searchParams;
-  const { slug } = params;
+  const { slug } = searchParams;
   if (!slug) {
     return <p>enginn grein valin</p>;
   }
