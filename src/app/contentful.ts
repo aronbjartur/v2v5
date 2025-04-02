@@ -1,4 +1,4 @@
-import { createClient, Entry} from 'contentful';
+import { createClient, Entry } from 'contentful';
 import { Document } from '@contentful/rich-text-types';
 
 interface HomepageFields {
@@ -20,7 +20,8 @@ const client = createClient({
 
 export async function getHomepageData(): Promise<{ title: string; text: Document }[]> {
   const entries = await client.getEntries({ content_type: 'homepage' });
-  return (entries.items as Entry<HomepageFields>[]).map(item => ({
+  const items = entries.items as unknown as Entry<HomepageFields>[];
+  return items.map(item => ({
     title: item.fields.title,
     text: item.fields.text,
   }));
@@ -28,7 +29,8 @@ export async function getHomepageData(): Promise<{ title: string; text: Document
 
 export async function getNewsArticles(): Promise<{ slug: string; title: string; excerpt: string }[]> {
   const entries = await client.getEntries({ content_type: 'newsArticle' });
-  return (entries.items as Entry<NewsArticleFields>[]).map(item => ({
+  const items = entries.items as unknown as Entry<NewsArticleFields>[];
+  return items.map(item => ({
     slug: item.fields.slug,
     title: item.fields.title,
     excerpt: item.fields.excerpt,
@@ -40,7 +42,7 @@ export async function getNewsArticle(slug: string): Promise<{ title: string; tex
     content_type: 'newsArticle',
     'fields.slug': slug,
   });
-  const items = entries.items as Entry<NewsArticleFields>[];
+  const items = entries.items as unknown as Entry<NewsArticleFields>[];
   if (items.length > 0) {
     return {
       title: items[0].fields.title,
