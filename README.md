@@ -1,3 +1,20 @@
+# vefforitin 2 verkefni 5
+
+https://v2v5.vercel.app/
+
+notaði contentful
+
+ávkað að gera frétta síðu. fréttir eru í fréttir, og articles í articles og það er hægt að nálgæst þær með því að ýta frekar á ákveðna frétt.
+forsíðan/heimasíðan sjálf er líka á contentful eins og fréttirnar og er þá hægt að breyta henni þar.
+
+## llm notkun
+
+copilot til að klára línur fyrir mig. 
+gemini notað svo hægt var að setja á vercel.
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -6,12 +23,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
